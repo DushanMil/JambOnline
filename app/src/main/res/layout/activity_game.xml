@@ -1307,20 +1307,23 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="First dice"
+                    tools:ignore="HardcodedText" />
 
                 <ImageView
                     android:id="@+id/dice_2"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="Second dice"
+                    tools:ignore="HardcodedText" />
 
                 <ImageView
                     android:id="@+id/dice_3"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
+                    android:contentDescription="TODO"
                     />
 
             </LinearLayout>
@@ -1337,7 +1340,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="TODO" />
 
                 <ImageView
                     android:id="@+id/dice_5"
@@ -1355,13 +1358,35 @@
 
             </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Roll"
-                android:textSize="40sp"
-                android:id="@+id/button_roll"
-                />
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/roll_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="First roll"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/button_roll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Roll"
+                    android:textSize="40sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
 

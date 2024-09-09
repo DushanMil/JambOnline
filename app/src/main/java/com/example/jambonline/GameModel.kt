@@ -13,3 +13,10 @@ enum class GameStatus {
     INPROGRESS,
     FINISHED
 }
+
+enum class RollState {
+    FIRST_ROLL,
+    SECOND_ROLL,
+    THIRD_ROLL,
+    WAITING
+}
