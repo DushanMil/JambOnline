@@ -1308,7 +1308,9 @@
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:contentDescription="First dice"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/dice_2"
@@ -1316,15 +1318,19 @@
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:contentDescription="Second dice"
-                    tools:ignore="HardcodedText" />
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/dice_3"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:contentDescription="TODO"
-                    />
+                    android:contentDescription="Third dice"
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true" />
 
             </LinearLayout>
 
@@ -1340,21 +1346,30 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="Fourth dice"
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/dice_5"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="Fifth dice"
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <ImageView
                     android:id="@+id/dice_6"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="Sixth dice"
+                    tools:ignore="HardcodedText"
+                    android:clickable="true"
+                    android:focusable="true"/>
 
             </LinearLayout>
 

@@ -20,3 +20,8 @@ enum class RollState {
     THIRD_ROLL,
     WAITING
 }
+
+enum class SelectedDice {
+    SELECTED,
+    NOT_SELECTED
+}
