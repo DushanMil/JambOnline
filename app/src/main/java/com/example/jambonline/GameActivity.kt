@@ -3,8 +3,6 @@ package com.example.jambonline
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.jambonline.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
@@ -23,5 +21,21 @@ class GameActivity : AppCompatActivity() {
             // example, should be different
             binding.down1.text = "4"
         }
+
+        binding.buttonRoll.setOnClickListener {
+            rollDice()
+        }
+
+        binding.dice1.setImageResource(R.drawable.dice1)
+        binding.dice2.setImageResource(R.drawable.dice2)
+        binding.dice3.setImageResource(R.drawable.dice3)
+        binding.dice4.setImageResource(R.drawable.dice4)
+        binding.dice5.setImageResource(R.drawable.dice5)
+        binding.dice6.setImageResource(R.drawable.dice6)
+    }
+
+    private fun rollDice() {
+        // generate six random numbers
+
     }
 }
