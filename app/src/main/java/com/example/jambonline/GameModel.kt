@@ -2,9 +2,11 @@ package com.example.jambonline
 
 data class GameModel (
     var gameId: String = "-1",
-    var winner: String = "",
-    var gameStatus: GameStatus = GameStatus.CREATED
-    // will probably need a list for the score of all players, and a number of players
+    var winner: Int = -1,
+    var gameStatus: GameStatus = GameStatus.CREATED,
+    var currentPlayer: Int = -1,
+    var numOfPlayers: Int = 0,
+    var playerScores: MutableList<Int> = mutableListOf()
 )
 
 enum class GameStatus {

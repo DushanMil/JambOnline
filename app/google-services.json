@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "559891662994",
+    "project_id": "jambonline-13a03",
+    "storage_bucket": "jambonline-13a03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559891662994:android:f7070df6d3b25140d3be4b",
+        "android_client_info": {
+          "package_name": "com.example.jambonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnyOjXY3lrukWBRvlSIjECX3elkBsoL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

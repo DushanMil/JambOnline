@@ -3,6 +3,7 @@ package com.example.jambonline
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -44,8 +45,19 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // when the game is started a snapshot listener is set on the games collection
+        // when a change is made in the database it is visible in the local data
+        GameData.fetchGameModel()
+
         // set on click listeners for table fields
         setTableOnClickListeners()
+
+        // set onclick listener for online game creation
+        binding.onlineStartButton.setOnClickListener {
+            if (gameModel?.gameId != "-1") {
+                startOnlineGame()
+            }
+        }
 
         binding.buttonRoll.setOnClickListener {
             performPlayerMove()
@@ -78,6 +90,36 @@ class GameActivity : AppCompatActivity() {
 
         setDiceImages()
 
+        GameData.gameModel.observe(this) {
+            gameModel = it
+            setUI()
+        }
+    }
+
+    private fun startOnlineGame() {
+        gameModel?.apply {
+            GameData.saveGameModel(GameModel(gameId = gameId, gameStatus = GameStatus.INPROGRESS, currentPlayer = currentPlayer, numOfPlayers = numOfPlayers, playerScores = playerScores))
+        }
+    }
+
+    private fun setUI() {
+        // set UI elements about other users
+        gameModel?.apply {
+            if (gameId != "-1") {
+                binding.gameIdTv.text = gameId
+                binding.myIdTv.text = GameData.myId.toString()
+                binding.playingIdTv.text = currentPlayer.toString()
+                binding.numberIdTv.text = numOfPlayers.toString()
+            }
+            else {
+                // game is ofline, disable these ui elements
+                binding.gameIdLayout.visibility = View.GONE
+                binding.myIdLayout.visibility = View.GONE
+                binding.playingIdLayout.visibility = View.GONE
+                binding.numPlayersLayout.visibility = View.GONE
+            }
+
+        }
     }
 
     private fun setTableOnClickListeners() {
@@ -238,6 +280,20 @@ class GameActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun processTableClick(clicked: TextView, columnSum: TextView, groupSum: TextView, nextField: TextView?) {
+        // check if its my turn and if the game is started
+        if (gameModel?.gameId != "-1") {
+            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
+                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
+                return
+            }
+            if (gameModel?.currentPlayer != GameData.myId) {
+                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+
+
+
         if (announceState) {
             Toast.makeText(applicationContext, "Can't write after announce!", Toast.LENGTH_SHORT).show()
             return
@@ -287,7 +343,7 @@ class GameActivity : AppCompatActivity() {
 
             // add number of moves
             numOfMoves++
-            Log.i("tag", "Broj poteza: $numOfMoves")
+            // Log.i("tag", "Broj poteza: $numOfMoves")
             if (numOfMoves == maxGameMoves) {
                 // game is finished
                 rollState = RollState.FINISHED
@@ -295,6 +351,13 @@ class GameActivity : AppCompatActivity() {
                 binding.buttonRoll.isEnabled = false
             }
 
+            // my move is finished, announce that to other users
+            gameModel?.apply {
+                currentPlayer = (currentPlayer + 1) % numOfPlayers
+                playerScores[GameData.myId] = binding.gameScore.text.toString().toInt()
+
+                GameData.saveGameModel(this)
+            }
 
         }
         else {
@@ -308,6 +371,17 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun announceFieldClick(clicked: TextView, columnSum: TextView, groupSum: TextView) {
+        if (gameModel?.gameId != "-1") {
+            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
+                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
+                return
+            }
+            if (gameModel?.currentPlayer != GameData.myId) {
+                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
+
         if (clicked.hint == "n" && rollState == RollState.SECOND_ROLL) {
             clicked.hint = "i"
             announceState = true
@@ -410,6 +484,16 @@ class GameActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun performPlayerMove() {
+        if (gameModel?.gameId != "-1") {
+            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
+                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
+                return
+            }
+            if (gameModel?.currentPlayer != GameData.myId) {
+                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
+                return
+            }
+        }
 
         when(rollState) {
             RollState.FIRST_ROLL -> {
