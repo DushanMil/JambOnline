@@ -129,7 +129,7 @@
                         android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up1"
@@ -143,7 +143,7 @@
                         android:text="x"
                         android:tag="1"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative1"
@@ -157,7 +157,7 @@
                         android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce1"
@@ -167,11 +167,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused1"
@@ -212,7 +212,7 @@
                         android:text="x"
                         android:tag="2"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up2"
@@ -226,7 +226,7 @@
                         android:text="x"
                         android:tag="2"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative2"
@@ -240,7 +240,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="2"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce2"
@@ -250,11 +250,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="2"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused2"
@@ -295,7 +295,7 @@
                         android:text="x"
                         android:tag="3"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up3"
@@ -309,7 +309,7 @@
                         android:text="x"
                         android:tag="3"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative3"
@@ -323,7 +323,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="3"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce3"
@@ -333,11 +333,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="3"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused3"
@@ -346,7 +346,7 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
@@ -378,7 +378,7 @@
                         android:text="x"
                         android:tag="4"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up4"
@@ -392,7 +392,7 @@
                         android:text="x"
                         android:tag="4"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative4"
@@ -406,7 +406,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="4"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce4"
@@ -416,11 +416,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="4"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused4"
@@ -429,7 +429,7 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
@@ -461,7 +461,7 @@
                         android:text="x"
                         android:tag="5"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up5"
@@ -475,7 +475,7 @@
                         android:text="x"
                         android:tag="5"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative5"
@@ -489,7 +489,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="5"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce5"
@@ -499,11 +499,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="5"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused5"
@@ -544,7 +544,7 @@
                         android:tag="6"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up6"
@@ -558,7 +558,7 @@
                         android:text="x"
                         android:tag="6"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative6"
@@ -572,7 +572,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="6"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce6"
@@ -582,11 +582,11 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:tag="6"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/unused6"
@@ -595,7 +595,7 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
@@ -682,6 +682,7 @@
                         android:id="@+id/textView16"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Max"
@@ -700,7 +701,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="7" />
 
                     <TextView
@@ -714,7 +715,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="7" />
 
                     <TextView
@@ -728,7 +729,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="7" />
 
                     <TextView
@@ -739,10 +740,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="7" />
 
                     <TextView
@@ -752,7 +753,7 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
@@ -765,6 +766,7 @@
                         android:id="@+id/textView17"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Min"
@@ -783,7 +785,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="8" />
 
                     <TextView
@@ -797,7 +799,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="8" />
 
                     <TextView
@@ -811,7 +813,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="8" />
 
                     <TextView
@@ -822,10 +824,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="8" />
 
                     <TextView
@@ -922,6 +924,7 @@
                         android:id="@+id/textView19"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="17dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Straight"
@@ -940,7 +943,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="9" />
 
                     <TextView
@@ -954,7 +957,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="9" />
 
                     <TextView
@@ -968,7 +971,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="9" />
 
                     <TextView
@@ -979,10 +982,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="9" />
 
                     <TextView
@@ -1005,6 +1008,7 @@
                         android:id="@+id/textView20"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Full"
@@ -1023,7 +1027,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="10" />
 
                     <TextView
@@ -1037,7 +1041,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="10" />
 
                     <TextView
@@ -1051,7 +1055,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="10" />
 
                     <TextView
@@ -1062,10 +1066,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="10" />
 
                     <TextView
@@ -1088,6 +1092,7 @@
                         android:id="@+id/textView21"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Poker"
@@ -1106,7 +1111,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="11" />
 
                     <TextView
@@ -1120,7 +1125,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="11" />
 
                     <TextView
@@ -1134,7 +1139,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="11" />
 
                     <TextView
@@ -1145,10 +1150,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="11" />
 
                     <TextView
@@ -1171,6 +1176,7 @@
                         android:id="@+id/textView22"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
                         android:background="@color/light_blue"
                         android:gravity="center"
                         android:text="Jamb"
@@ -1189,7 +1195,7 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="12" />
 
                     <TextView
@@ -1204,7 +1210,7 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:textColor="@color/hint"
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="12" />
 
                     <TextView
@@ -1218,7 +1224,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="12" />
 
                     <TextView
@@ -1229,10 +1235,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
-                        android:hint="i"
+                        android:hint="n"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp"
+                        android:textSize="30sp"
                         android:tag="12" />
 
                     <TextView
@@ -1242,7 +1248,7 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 

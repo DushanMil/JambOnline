@@ -2,6 +2,7 @@ package com.example.jambonline
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -27,6 +28,15 @@ class GameActivity : AppCompatActivity() {
     private var selectedImageIds: IntArray = intArrayOf(R.drawable.dice1_selected, R.drawable.dice2_selected, R.drawable.dice3_selected, R.drawable.dice4_selected, R.drawable.dice5_selected, R.drawable.dice6_selected)
     private lateinit var diceBindings : Array<ImageView>
 
+    // global variables for announce
+    private var announceState: Boolean = false
+    private var announceField: TextView? = null
+    private var announceColumnSum: TextView? = null
+    private var announceGroupSum: TextView? = null
+
+    // number of moves used to check if the game is finished
+    private var numOfMoves: Int = 0
+    private val maxGameMoves = 48
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -188,10 +198,51 @@ class GameActivity : AppCompatActivity() {
         }
 
         // announce on click listeners
+        binding.announce1.setOnClickListener {
+            announceFieldClick(binding.announce1, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announce2.setOnClickListener {
+            announceFieldClick(binding.announce2, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announce3.setOnClickListener {
+            announceFieldClick(binding.announce3, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announce4.setOnClickListener {
+            announceFieldClick(binding.announce4, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announce5.setOnClickListener {
+            announceFieldClick(binding.announce5, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announce6.setOnClickListener {
+            announceFieldClick(binding.announce6, binding.announceSumDigits, binding.allSumDigits)
+        }
+        binding.announceMax.setOnClickListener {
+            announceFieldClick(binding.announceMax, binding.announceSumMinmax, binding.allSumMinmax)
+        }
+        binding.announceMin.setOnClickListener {
+            announceFieldClick(binding.announceMin, binding.announceSumMinmax, binding.allSumMinmax)
+        }
+        binding.announceStraight.setOnClickListener {
+            announceFieldClick(binding.announceStraight, binding.announceSumSpecific, binding.allSumSpecific)
+        }
+        binding.announceFull.setOnClickListener {
+            announceFieldClick(binding.announceFull, binding.announceSumSpecific, binding.allSumSpecific)
+        }
+        binding.announcePoker.setOnClickListener {
+            announceFieldClick(binding.announcePoker, binding.announceSumSpecific, binding.allSumSpecific)
+        }
+        binding.announceJamb.setOnClickListener {
+            announceFieldClick(binding.announceJamb, binding.announceSumSpecific, binding.allSumSpecific)
+        }
     }
 
     @SuppressLint("SetTextI18n")
     private fun processTableClick(clicked: TextView, columnSum: TextView, groupSum: TextView, nextField: TextView?) {
+        if (announceState) {
+            Toast.makeText(applicationContext, "Can't write after announce!", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         if (clicked.hint == "i" && rollState != RollState.FIRST_ROLL) {
 
             // value can be set to the field
@@ -199,6 +250,7 @@ class GameActivity : AppCompatActivity() {
 
             // set field value
             clicked.text = rollValue.toString()
+            clicked.hint = "x"
             clicked.setTextColor(ContextCompat.getColor(applicationContext, R.color.black))
             // add value to total score
             if (clicked.tag.toString().toInt() == 8) {
@@ -233,6 +285,17 @@ class GameActivity : AppCompatActivity() {
             setDiceImages()
             binding.rollCount.text = "First roll"
 
+            // add number of moves
+            numOfMoves++
+            Log.i("tag", "Broj poteza: $numOfMoves")
+            if (numOfMoves == maxGameMoves) {
+                // game is finished
+                rollState = RollState.FINISHED
+                binding.rollCount.text = "Game over"
+                binding.buttonRoll.isEnabled = false
+            }
+
+
         }
         else {
             if (rollState == RollState.FIRST_ROLL) {
@@ -241,6 +304,19 @@ class GameActivity : AppCompatActivity() {
             else {
                 Toast.makeText(applicationContext, "Field value already set!", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun announceFieldClick(clicked: TextView, columnSum: TextView, groupSum: TextView) {
+        if (clicked.hint == "n" && rollState == RollState.SECOND_ROLL) {
+            clicked.hint = "i"
+            announceState = true
+            announceField = clicked
+            announceColumnSum = columnSum
+            announceGroupSum = groupSum
+        }
+        else {
+            Toast.makeText(applicationContext, "Can't announce!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -274,7 +350,7 @@ class GameActivity : AppCompatActivity() {
                 }
                 // find the index of 3x
                 // find the index of 2x different from 3x
-                var value3: Int = 0
+                var value3 = 0
                 for(i in count.indices) {
                     if (count[i] >= 3) {
                         value3 = i + 1
@@ -283,7 +359,7 @@ class GameActivity : AppCompatActivity() {
                 if (value3 == 0) {
                     return 0
                 }
-                var value2: Int = 0
+                var value2 = 0
                 for(i in count.indices) {
                     if (count[i] >= 2 && i != value3 - 1) {
                         value2 = i + 1
@@ -349,11 +425,21 @@ class GameActivity : AppCompatActivity() {
             RollState.THIRD_ROLL -> {
                 diceRoll()
 
-                binding.rollCount.text = "Waiting"
-                binding.buttonRoll.isEnabled = false
+                if (!announceState) {
+                    binding.rollCount.text = "Waiting"
+                    binding.buttonRoll.isEnabled = false
+                    rollState = RollState.WAITING
+                }
+                else {
+                    announceState = false
+                    announceField?.let { announceColumnSum?.let { it1 ->
+                        announceGroupSum?.let { it2 ->
+                            processTableClick(it,
+                                it1, it2, null)
+                        }
+                    } }
+                }
 
-
-                rollState = RollState.WAITING
             }
             RollState.WAITING -> {
                 // TODO remove this
@@ -363,6 +449,9 @@ class GameActivity : AppCompatActivity() {
                 setDiceImages()
 
                 rollState = RollState.FIRST_ROLL
+            }
+            RollState.FINISHED -> {
+
             }
         }
     }

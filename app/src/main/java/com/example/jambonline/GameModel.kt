@@ -18,7 +18,8 @@ enum class RollState {
     FIRST_ROLL,
     SECOND_ROLL,
     THIRD_ROLL,
-    WAITING
+    WAITING,
+    FINISHED
 }
 
 enum class SelectedDice {
