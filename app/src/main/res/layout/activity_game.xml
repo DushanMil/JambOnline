@@ -31,6 +31,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <!-- Title -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -100,6 +101,7 @@
 
                 </TableRow>
 
+                <!-- 1 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -117,13 +119,14 @@
                     <TextView
                         android:id="@+id/down1"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:hint="i"
+                        android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:textSize="40sp" />
@@ -131,25 +134,27 @@
                     <TextView
                         android:id="@+id/up1"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="1"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative1"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:hint="i"
+                        android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:textSize="40sp" />
@@ -163,6 +168,7 @@
                         android:focusable="true"
                         android:gravity="center"
                         android:hint="i"
+                        android:tag="1"
                         android:paddingBottom="5dp"
                         android:text=""
                         android:textSize="40sp" />
@@ -174,10 +180,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
+                <!-- 2 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -195,7 +202,7 @@
                     <TextView
                         android:id="@+id/down2"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -203,26 +210,28 @@
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="2"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/up2"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="2"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative2"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -230,6 +239,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="2"
                         android:textSize="40sp" />
 
                     <TextView
@@ -243,6 +253,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="2"
                         android:textSize="40sp" />
 
                     <TextView
@@ -256,6 +267,7 @@
 
                 </TableRow>
 
+                <!-- 3 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -273,7 +285,7 @@
                     <TextView
                         android:id="@+id/down3"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -281,26 +293,28 @@
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="3"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/up3"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="3"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative3"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -308,6 +322,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="3"
                         android:textSize="40sp" />
 
                     <TextView
@@ -321,6 +336,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="3"
                         android:textSize="40sp" />
 
                     <TextView
@@ -330,10 +346,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="30sp" />
+                        android:textSize="40sp" />
 
                 </TableRow>
 
+                <!-- 4 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -351,7 +368,7 @@
                     <TextView
                         android:id="@+id/down4"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -359,26 +376,28 @@
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="4"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/up4"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="4"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative4"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -386,6 +405,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="4"
                         android:textSize="40sp" />
 
                     <TextView
@@ -399,6 +419,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="4"
                         android:textSize="40sp" />
 
                     <TextView
@@ -408,10 +429,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="30sp" />
+                        android:textSize="40sp" />
 
                 </TableRow>
 
+                <!-- 5 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -429,7 +451,7 @@
                     <TextView
                         android:id="@+id/down5"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -437,26 +459,28 @@
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="5"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/up5"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="5"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative5"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -464,6 +488,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="5"
                         android:textSize="40sp" />
 
                     <TextView
@@ -477,6 +502,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="5"
                         android:textSize="40sp" />
 
                     <TextView
@@ -490,6 +516,7 @@
 
                 </TableRow>
 
+                <!-- 6 score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -507,13 +534,14 @@
                     <TextView
                         android:id="@+id/down6"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
+                        android:tag="6"
                         android:text="x"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
@@ -521,20 +549,21 @@
                     <TextView
                         android:id="@+id/up6"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="x"
+                        android:tag="6"
                         android:textColor="@color/hint"
                         android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/alternative6"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -542,6 +571,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="6"
                         android:textSize="40sp" />
 
                     <TextView
@@ -555,6 +585,7 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
+                        android:tag="6"
                         android:textSize="40sp" />
 
                     <TextView
@@ -564,10 +595,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="30sp" />
+                        android:textSize="40sp" />
 
                 </TableRow>
 
+                <!-- Digits score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -586,36 +618,36 @@
                     <TextView
                         android:id="@+id/down_sum_digits"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up_sum_digits"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative_sum_digits"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce_sum_digits"
@@ -626,7 +658,7 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/all_sum_digits"
@@ -637,10 +669,11 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
+                <!-- Max score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -658,7 +691,7 @@
                     <TextView
                         android:id="@+id/down_max"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -667,12 +700,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="7" />
 
                     <TextView
                         android:id="@+id/up_max"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -680,12 +714,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="7" />
 
                     <TextView
                         android:id="@+id/alternative_max"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -693,7 +728,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="7" />
 
                     <TextView
                         android:id="@+id/announce_max"
@@ -706,7 +742,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="7" />
 
                     <TextView
                         android:id="@+id/unused_max"
@@ -715,10 +752,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="30sp" />
+                        android:textSize="40sp" />
 
                 </TableRow>
 
+                <!-- Min score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -736,7 +774,7 @@
                     <TextView
                         android:id="@+id/down_min"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -745,12 +783,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="8" />
 
                     <TextView
                         android:id="@+id/up_min"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -758,12 +797,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="8" />
 
                     <TextView
                         android:id="@+id/alternative_min"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -771,7 +811,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="8" />
 
                     <TextView
                         android:id="@+id/announce_min"
@@ -784,7 +825,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="8" />
 
                     <TextView
                         android:id="@+id/unused_min"
@@ -797,6 +839,7 @@
 
                 </TableRow>
 
+                <!-- MinMax score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -815,36 +858,36 @@
                     <TextView
                         android:id="@+id/down_sum_minmax"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up_sum_minmax"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative_sum_minmax"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce_sum_minmax"
@@ -855,7 +898,7 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/all_sum_minmax"
@@ -866,10 +909,11 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
 
+                <!-- Straight score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -887,7 +931,7 @@
                     <TextView
                         android:id="@+id/down_straight"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -896,12 +940,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="9" />
 
                     <TextView
                         android:id="@+id/up_straight"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -909,12 +954,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="9" />
 
                     <TextView
                         android:id="@+id/alternative_straight"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -922,7 +968,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="9" />
 
                     <TextView
                         android:id="@+id/announce_straight"
@@ -935,7 +982,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="9" />
 
                     <TextView
                         android:id="@+id/unused_straight"
@@ -948,6 +996,7 @@
 
                 </TableRow>
 
+                <!-- Full score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -965,7 +1014,7 @@
                     <TextView
                         android:id="@+id/down_full"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -974,12 +1023,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="10" />
 
                     <TextView
                         android:id="@+id/up_full"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -987,12 +1037,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="10" />
 
                     <TextView
                         android:id="@+id/alternative_full"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -1000,7 +1051,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="10" />
 
                     <TextView
                         android:id="@+id/announce_full"
@@ -1013,7 +1065,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="10" />
 
                     <TextView
                         android:id="@+id/unused_full"
@@ -1026,6 +1079,7 @@
 
                 </TableRow>
 
+                <!-- Poker score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -1043,7 +1097,7 @@
                     <TextView
                         android:id="@+id/down_poker"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -1052,12 +1106,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="11" />
 
                     <TextView
                         android:id="@+id/up_poker"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -1065,12 +1120,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="11" />
 
                     <TextView
                         android:id="@+id/alternative_poker"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -1078,7 +1134,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="11" />
 
                     <TextView
                         android:id="@+id/announce_poker"
@@ -1091,7 +1148,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="11" />
 
                     <TextView
                         android:id="@+id/unused_poker"
@@ -1104,6 +1162,7 @@
 
                 </TableRow>
 
+                <!-- Jamb fields -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -1121,7 +1180,7 @@
                     <TextView
                         android:id="@+id/down_jamb"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/white"
                         android:clickable="true"
@@ -1130,12 +1189,13 @@
                         android:paddingBottom="5dp"
                         android:text="x"
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="12" />
 
                     <TextView
                         android:id="@+id/up_jamb"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -1144,12 +1204,13 @@
                         android:paddingBottom="5dp"
                         android:text=""
                         android:textColor="@color/hint"
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="12" />
 
                     <TextView
                         android:id="@+id/alternative_jamb"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/white"
                         android:clickable="true"
                         android:focusable="true"
@@ -1157,7 +1218,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="12" />
 
                     <TextView
                         android:id="@+id/announce_jamb"
@@ -1170,7 +1232,8 @@
                         android:hint="i"
                         android:paddingBottom="5dp"
                         android:text=""
-                        android:textSize="40sp" />
+                        android:textSize="40sp"
+                        android:tag="12" />
 
                     <TextView
                         android:id="@+id/unused_jamb"
@@ -1179,10 +1242,11 @@
                         android:background="@color/white"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="30sp" />
+                        android:textSize="40sp" />
 
                 </TableRow>
 
+                <!-- Specific fields score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -1201,36 +1265,36 @@
                     <TextView
                         android:id="@+id/down_sum_specific"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:width="50dp"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/up_sum_specific"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/alternative_sum_specific"
                         android:layout_width="57dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@color/weird"
                         android:gravity="center"
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/announce_sum_specific"
@@ -1241,7 +1305,7 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/all_sum_specific"
@@ -1252,10 +1316,10 @@
                         android:paddingBottom="5dp"
                         android:text="0"
                         android:textColor="@color/black"
-                        android:textSize="40sp" />
+                        android:textSize="30sp" />
 
                 </TableRow>
-
+                <!-- Total score -->
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -1264,7 +1328,7 @@
                         android:id="@+id/textView24"
                         android:layout_width="57dp"
                         android:layout_height="match_parent"
-                        android:layout_span="5"
+                        android:layout_span="4"
                         android:background="@color/gray"
                         android:gravity="center"
                         android:text="Total score:"
@@ -1276,6 +1340,7 @@
                         android:id="@+id/game_score"
                         android:layout_width="57dp"
                         android:layout_height="wrap_content"
+                        android:layout_span="2"
                         android:width="50dp"
                         android:background="@color/gray"
                         android:gravity="center"
