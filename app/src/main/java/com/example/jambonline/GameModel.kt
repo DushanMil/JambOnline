@@ -28,5 +28,6 @@ enum class RollState {
 
 enum class SelectedDice {
     SELECTED,
-    NOT_SELECTED
+    NOT_SELECTED,
+    PREV_MOVE
 }

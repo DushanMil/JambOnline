@@ -51,6 +51,8 @@ class GameActivity : AppCompatActivity() {
 
         // when the game is started a snapshot listener is set on the games collection
         // when a change is made in the database it is visible in the local data
+        // this is only done in online mode
+        // offline there is no snapshotListener
         GameData.fetchGameModel()
 
         // set on click listeners for table fields
@@ -166,8 +168,8 @@ class GameActivity : AppCompatActivity() {
                 // game is offline, disable these ui elements
                 binding.gameIdLayout.visibility = View.GONE
                 binding.myIdLayout.visibility = View.GONE
-                // binding.playingIdLayout.visibility = View.GONE
                 binding.scoreBoard.visibility = View.GONE
+                binding.winnerLayout.visibility = View.GONE
             }
 
         }
@@ -553,6 +555,13 @@ class GameActivity : AppCompatActivity() {
                 diceRoll()
                 binding.rollCount.text = "Third roll"
                 rollState = RollState.THIRD_ROLL
+                // set previously selected dice to prev_move selected
+                // these dice cannot be redelected in the 3rd move
+                for(i in 0 .. 5) {
+                    if (diceSelection[i] == SelectedDice.SELECTED) {
+                        diceSelection[i] = SelectedDice.PREV_MOVE
+                    }
+                }
             }
             RollState.THIRD_ROLL -> {
                 diceRoll()
@@ -634,9 +643,33 @@ class GameActivity : AppCompatActivity() {
     private fun selectDice(dice: Int) {
         // select dice to be saved in the next roll
         // dice cannot be stored before first or after 3rd roll
-        if (rollState == RollState.SECOND_ROLL || rollState == RollState.THIRD_ROLL) {
-            diceSelection[dice] = SelectedDice.SELECTED
-            diceBindings[dice].setImageResource(selectedImageIds[diceValues[dice] - 1])
+        if (rollState == RollState.SECOND_ROLL) {
+            if (diceSelection[dice] == SelectedDice.NOT_SELECTED) {
+                diceSelection[dice] = SelectedDice.SELECTED
+                diceBindings[dice].setImageResource(selectedImageIds[diceValues[dice] - 1])
+            }
+            else {
+                // restore dice selection
+                diceSelection[dice] = SelectedDice.NOT_SELECTED
+                diceBindings[dice].setImageResource(imageIds[diceValues[dice] - 1])
+            }
+
+        }
+        else if (rollState == RollState.THIRD_ROLL) {
+            if (diceSelection[dice] == SelectedDice.NOT_SELECTED) {
+                diceSelection[dice] = SelectedDice.SELECTED
+                diceBindings[dice].setImageResource(selectedImageIds[diceValues[dice] - 1])
+            }
+            else if (diceSelection[dice] == SelectedDice.SELECTED) {
+                // restore dice selection
+                diceSelection[dice] = SelectedDice.NOT_SELECTED
+                diceBindings[dice].setImageResource(imageIds[diceValues[dice] - 1])
+            }
+            else {
+                // dice was selected in the prev move
+                // it cant be deselected now
+                Toast.makeText(applicationContext, "Dice was selected in previous move!", Toast.LENGTH_SHORT).show()
+            }
         }
         else {
             Toast.makeText(applicationContext, "Can't store a dice value", Toast.LENGTH_SHORT).show()
