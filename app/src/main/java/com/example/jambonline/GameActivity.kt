@@ -2,9 +2,10 @@ package com.example.jambonline
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
+import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -38,6 +39,9 @@ class GameActivity : AppCompatActivity() {
     // number of moves used to check if the game is finished
     private var numOfMoves: Int = 0
     private val maxGameMoves = 48
+
+    // scoreboard table rows
+    private var scoreBoard: MutableList<TableRow> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,7 +91,6 @@ class GameActivity : AppCompatActivity() {
             selectDice(5)
         }
 
-
         setDiceImages()
 
         GameData.gameModel.observe(this) {
@@ -110,15 +113,52 @@ class GameActivity : AppCompatActivity() {
             if (gameId != "-1") {
                 binding.gameIdTv.text = gameId
                 binding.myIdTv.text = GameData.myId.toString()
-                binding.playingIdTv.text = currentPlayer.toString()
-                binding.numberIdTv.text = numOfPlayers.toString()
+                // binding.playingIdTv.text = currentPlayer.toString()
+
+
+                // set table rows
+                if (gameStatus == GameStatus.CREATED || gameStatus == GameStatus.JOINED) {
+                    // scoreboard is not initialised
+                    // create table rows and add them to table
+                    for(i in playerScores.indices) {
+                        // using this we skip over the rows that have alredy been added in the table
+                        if (i >= scoreBoard.size) {
+                            val tableRow = LayoutInflater.from(applicationContext).inflate(R.layout.table_row, null) as TableRow
+                            tableRow.findViewById<TextView>(R.id.nameTextView).text = i.toString()
+                            tableRow.findViewById<TextView>(R.id.numberTextView).text = playerScores[i].toString()
+
+                            scoreBoard.add(tableRow)
+
+                            binding.scoreBoard.addView(tableRow)
+                        }
+
+                    }
+                }
+                else {
+                    // update table data
+                    for(i in scoreBoard.indices) {
+                        scoreBoard[i].findViewById<TextView>(R.id.numberTextView).text = playerScores[i].toString()
+                    }
+                }
+
+                // current player's row should be colored
+                scoreBoard[currentPlayer].findViewById<TextView>(R.id.numberTextView).setBackgroundColor(ContextCompat.getColor(applicationContext, R.color.light_pink))
+                scoreBoard[currentPlayer].findViewById<TextView>(R.id.nameTextView).setBackgroundColor(ContextCompat.getColor(applicationContext, R.color.light_pink))
+
+                // previous players background color should be reset
+                scoreBoard[Math.floorMod(currentPlayer - 1, numOfPlayers)].findViewById<TextView>(R.id.numberTextView).setBackgroundColor(ContextCompat.getColor(applicationContext, R.color.white))
+                scoreBoard[Math.floorMod(currentPlayer - 1, numOfPlayers)].findViewById<TextView>(R.id.nameTextView).setBackgroundColor(ContextCompat.getColor(applicationContext, R.color.white))
+
+                if (gameStatus == GameStatus.INPROGRESS) {
+                    binding.winnerComment.text = "In progress"
+                }
 
                 if (gameStatus == GameStatus.FINISHED) {
                     binding.winnerComment.text = if (winner == GameData.myId) {
                         "You won"
                     }
                     else {
-                            "Player $winner won"
+                        "Player $winner won"
                     }
                 }
             }
@@ -126,8 +166,8 @@ class GameActivity : AppCompatActivity() {
                 // game is offline, disable these ui elements
                 binding.gameIdLayout.visibility = View.GONE
                 binding.myIdLayout.visibility = View.GONE
-                binding.playingIdLayout.visibility = View.GONE
-                binding.numPlayersLayout.visibility = View.GONE
+                // binding.playingIdLayout.visibility = View.GONE
+                binding.scoreBoard.visibility = View.GONE
             }
 
         }

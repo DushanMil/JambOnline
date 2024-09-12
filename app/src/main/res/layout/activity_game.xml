@@ -50,7 +50,7 @@
                     android:textSize="30sp"
                     android:textStyle="bold"
                     android:paddingBottom="10dp"
-                    android:paddingHorizontal="20dp"/>
+                    android:paddingHorizontal="10dp"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -96,70 +96,6 @@
 
             </LinearLayout>
 
-            <!-- Playing id info -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="left"
-                android:id="@+id/playing_id_layout"
-                >
-
-                <TextView
-                    android:id="@+id/playing_id_comment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="Playing:"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/playing_id_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="10dp"
-                    android:paddingHorizontal="20dp"/>
-
-            </LinearLayout>
-
-            <!-- Num of players -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="left"
-                android:id="@+id/num_players_layout"
-                >
-
-                <TextView
-                    android:id="@+id/number_id_comment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="Number of players:"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="10dp"/>
-
-                <TextView
-                    android:id="@+id/number_id_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:text="0"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:paddingBottom="10dp"
-                    android:paddingHorizontal="20dp"/>
-
-            </LinearLayout>
-
             <!-- Winner -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -174,14 +110,50 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
-                    android:text="Playing"
+                    android:text="Waiting for players"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     android:paddingBottom="10dp"/>
 
             </LinearLayout>
 
-            <!-- Other users scores, TODO -->
+            <!-- Other users scores -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/score_board"
+                android:layout_marginVertical="40dp"
+                >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/scoreboard_user"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/dark_blue"
+                        android:gravity="center"
+                        android:text="Player"
+                        android:textSize="40sp"
+                        android:textColor="@color/white"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/scoreboard_user_score"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/dark_blue"
+                        android:gravity="center"
+                        android:text="Score"
+                        android:textSize="40sp"
+                        android:textColor="@color/white"
+                        tools:ignore="HardcodedText" />
+
+                </TableRow>
+
+            </TableLayout>
 
             <!-- Main game table and user score -->
             <TableLayout
