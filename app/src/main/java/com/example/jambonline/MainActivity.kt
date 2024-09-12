@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 GameData.myId = model.numOfPlayers
                 model.numOfPlayers++
                 model.playerScores.add(0)
+                model.playerFinished.add(RollState.NOT_FINISHED)
                 GameData.saveGameModel(model)
                 startGame()
             }
@@ -64,7 +65,8 @@ class MainActivity : AppCompatActivity() {
                 gameId = (Random.nextInt(8999) + 1000).toString(),
                 currentPlayer = 0,
                 numOfPlayers = 1,
-                playerScores = mutableListOf(0)
+                playerScores = mutableListOf(0),
+                playerFinished = mutableListOf(RollState.NOT_FINISHED)
             )
         )
         startGame()
@@ -76,7 +78,8 @@ class MainActivity : AppCompatActivity() {
                 gameStatus = GameStatus.JOINED,
                 currentPlayer = 0,
                 numOfPlayers = 1,
-                playerScores = mutableListOf(0)
+                playerScores = mutableListOf(0),
+                playerFinished = mutableListOf(RollState.NOT_FINISHED)
             )
         )
         startGame()

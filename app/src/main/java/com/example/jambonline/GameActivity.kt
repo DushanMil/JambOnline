@@ -98,7 +98,9 @@ class GameActivity : AppCompatActivity() {
 
     private fun startOnlineGame() {
         gameModel?.apply {
-            GameData.saveGameModel(GameModel(gameId = gameId, gameStatus = GameStatus.INPROGRESS, currentPlayer = currentPlayer, numOfPlayers = numOfPlayers, playerScores = playerScores))
+            GameData.saveGameModel(GameModel(gameId = gameId, gameStatus = GameStatus.INPROGRESS,
+                currentPlayer = currentPlayer, numOfPlayers = numOfPlayers,
+                playerScores = playerScores, playerFinished = playerFinished))
         }
     }
 
@@ -110,9 +112,18 @@ class GameActivity : AppCompatActivity() {
                 binding.myIdTv.text = GameData.myId.toString()
                 binding.playingIdTv.text = currentPlayer.toString()
                 binding.numberIdTv.text = numOfPlayers.toString()
+
+                if (gameStatus == GameStatus.FINISHED) {
+                    binding.winnerComment.text = if (winner == GameData.myId) {
+                        "You won"
+                    }
+                    else {
+                            "Player $winner won"
+                    }
+                }
             }
             else {
-                // game is ofline, disable these ui elements
+                // game is offline, disable these ui elements
                 binding.gameIdLayout.visibility = View.GONE
                 binding.myIdLayout.visibility = View.GONE
                 binding.playingIdLayout.visibility = View.GONE
@@ -281,18 +292,9 @@ class GameActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     private fun processTableClick(clicked: TextView, columnSum: TextView, groupSum: TextView, nextField: TextView?) {
         // check if its my turn and if the game is started
-        if (gameModel?.gameId != "-1") {
-            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
-                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
-                return
-            }
-            if (gameModel?.currentPlayer != GameData.myId) {
-                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
-                return
-            }
+        if (!checkOnlineGameConditions()) {
+            return
         }
-
-
 
         if (announceState) {
             Toast.makeText(applicationContext, "Can't write after announce!", Toast.LENGTH_SHORT).show()
@@ -356,6 +358,26 @@ class GameActivity : AppCompatActivity() {
                 currentPlayer = (currentPlayer + 1) % numOfPlayers
                 playerScores[GameData.myId] = binding.gameScore.text.toString().toInt()
 
+                if (rollState == RollState.FINISHED) {
+                    playerFinished[GameData.myId] = RollState.FINISHED
+
+                    // check if all other players have finished the game
+                    var finished = true
+                    for(player in playerFinished) {
+                        if (player == RollState.NOT_FINISHED) {
+                            finished = false
+                        }
+                    }
+
+                    if (finished) {
+                        // winner = playerScores.max()
+                        for(i in playerScores.indices) {
+                            if (playerScores[i] == playerScores.max()) winner = i
+                        }
+                        gameStatus = GameStatus.FINISHED
+                    }
+                }
+
                 GameData.saveGameModel(this)
             }
 
@@ -371,15 +393,8 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun announceFieldClick(clicked: TextView, columnSum: TextView, groupSum: TextView) {
-        if (gameModel?.gameId != "-1") {
-            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
-                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
-                return
-            }
-            if (gameModel?.currentPlayer != GameData.myId) {
-                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
-                return
-            }
+        if (!checkOnlineGameConditions()) {
+            return
         }
 
         if (clicked.hint == "n" && rollState == RollState.SECOND_ROLL) {
@@ -484,15 +499,8 @@ class GameActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun performPlayerMove() {
-        if (gameModel?.gameId != "-1") {
-            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
-                Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
-                return
-            }
-            if (gameModel?.currentPlayer != GameData.myId) {
-                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
-                return
-            }
+        if (!checkOnlineGameConditions()) {
+            return
         }
 
         when(rollState) {
@@ -525,19 +533,30 @@ class GameActivity : AppCompatActivity() {
                 }
 
             }
-            RollState.WAITING -> {
-                // TODO remove this
-                binding.rollCount.text = "First roll"
-
-                resetDiceSelection()
-                setDiceImages()
-
-                rollState = RollState.FIRST_ROLL
-            }
-            RollState.FINISHED -> {
-
+            RollState.WAITING, RollState.NOT_FINISHED, RollState.FINISHED -> {
+                // nothing to do
             }
         }
+    }
+
+    private fun checkOnlineGameConditions(): Boolean {
+        if (gameModel?.gameId != "-1") {
+            if (gameModel?.gameStatus != GameStatus.INPROGRESS) {
+                if (gameModel?.gameStatus == GameStatus.FINISHED) {
+                    Toast.makeText(applicationContext, "Game is finished!", Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    Toast.makeText(applicationContext, "Game is not started!", Toast.LENGTH_SHORT).show()
+                }
+                return false
+            }
+            if (gameModel?.currentPlayer != GameData.myId) {
+                Toast.makeText(applicationContext, "Not your turn!", Toast.LENGTH_SHORT).show()
+                return false
+            }
+
+        }
+        return true
     }
 
     private fun resetDiceSelection() {
