@@ -395,6 +395,8 @@ class GameActivity : AppCompatActivity() {
                 binding.buttonRoll.isEnabled = false
             }
 
+            if (gameModel?.gameId == "-1") return;
+
             // my move is finished, announce that to other users
             gameModel?.apply {
                 currentPlayer = (currentPlayer + 1) % numOfPlayers
